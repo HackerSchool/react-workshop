@@ -1,38 +1,97 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #121213;
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+}
+
+.App-header {
   font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  margin-bottom: 5rem;
+}
+
+.App-header p {
+  margin: 0;
+}
+
+.App-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* SQUARES */
+
+.squares {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.squares-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #3a3a3c;
+  width: 3em;
+  height: 3em;
+  margin: 0.3rem;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.square--color-gray {
+  background-color: #3a3a3c;
+}
+
+.square--color-green {
+  background-color: #6aaa64;
+  border: none;
+}
+
+.square--color-yellow {
+  background-color: #c9b458;
+  border: none;
+}
+
+/* KEYBOARD */
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboard-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.keyboard-key {
+  background: #818384;
+  color: white;
+  border-radius: 4px;
+  box-shadow: none;
+  border: 0;
+  height: 3em;
+  min-width: 2.5em;
+  margin: 0.6rem 0.3rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
 }
