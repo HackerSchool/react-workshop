@@ -4,7 +4,7 @@ const BackspaceIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="24"
+      height="50%"
       viewBox="0 0 24 24"
       width="24"
     >
