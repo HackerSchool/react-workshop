@@ -11,15 +11,20 @@ const GameManager = () => {
   const [attempt, setAttempt] = useState(0);
   const [attempts, setAttempts] = useState([]);
   const [input, setInput] = useState([]);
+  const [won, setWon] = useState(false);
 
   const handleKeyButtonClick = useCallback(
     (key) => {
+      if (won) return;
       if (key === "enter") {
         if (
           input.length === WORD_LENGTH &&
           attempt < ATTEMPT_COUNT &&
           isValidWord(input.join(""))
         ) {
+          if (input.join() === answer.join()) {
+            setWon(true);
+          }
           setAttempts((oldAttempts) => [...oldAttempts, input]);
           setInput([]);
           setAttempt((oldAttempt) => oldAttempt + 1);
@@ -32,7 +37,7 @@ const GameManager = () => {
         );
       }
     },
-    [setInput, input, attempt, setAttempt, setAttempts]
+    [setInput, input, attempt, setAttempt, setAttempts, answer, won]
   );
 
   useEffect(() => {
@@ -58,7 +63,17 @@ const GameManager = () => {
 
   return (
     <>
-      <span>Answer: {answer}</span>
+      <div class="message-area">
+        {won && <p class="game-result">You win!</p>}
+        {attempt >= ATTEMPT_COUNT && !won && (
+          <>
+            <p class="game-result">You lost :/</p>
+            <p>
+              The correct word was <strong>{answer}</strong>.
+            </p>
+          </>
+        )}
+      </div>
       <GameSquares
         answer={answer}
         attempt={attempt}
@@ -66,7 +81,11 @@ const GameManager = () => {
         input={input}
         rowCount={ATTEMPT_COUNT}
       />
-      <Keyboard onKeyPress={handleKeyButtonClick} />
+      <Keyboard
+        answer={answer}
+        attempts={attempts}
+        onKeyPress={handleKeyButtonClick}
+      />
     </>
   );
 };

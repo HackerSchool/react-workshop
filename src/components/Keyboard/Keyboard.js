@@ -1,42 +1,45 @@
-import React from "react";
+import React, { useMemo } from "react";
 import BackspaceIcon from "../Icons/BackspaceIcon";
 import KeyboardKey from "./KeyboardKey";
 
-const Keyboard = ({ onKeyPress }) => {
+const Keyboard = ({ answer, attempts, onKeyPress }) => {
+  const keyColors = useMemo(
+    () => calculateKeyColors(answer, attempts),
+    [answer, attempts]
+  );
+
   return (
     <div className="keyboard">
       <div className="keyboard-row">
-        <KeyboardKey label="q" onKeyPress={onKeyPress} />
-        <KeyboardKey label="w" onKeyPress={onKeyPress} />
-        <KeyboardKey label="e" onKeyPress={onKeyPress} />
-        <KeyboardKey label="r" onKeyPress={onKeyPress} />
-        <KeyboardKey label="t" onKeyPress={onKeyPress} />
-        <KeyboardKey label="y" onKeyPress={onKeyPress} />
-        <KeyboardKey label="u" onKeyPress={onKeyPress} />
-        <KeyboardKey label="i" onKeyPress={onKeyPress} />
-        <KeyboardKey label="o" onKeyPress={onKeyPress} />
-        <KeyboardKey label="p" onKeyPress={onKeyPress} />
+        {"qwertyuiop".split("").map((keyLabel) => (
+          <KeyboardKey
+            key={keyLabel}
+            label={keyLabel}
+            onKeyPress={onKeyPress}
+            color={keyColors[keyLabel]}
+          />
+        ))}
       </div>
       <div className="keyboard-row">
-        <KeyboardKey label="a" onKeyPress={onKeyPress} />
-        <KeyboardKey label="s" onKeyPress={onKeyPress} />
-        <KeyboardKey label="d" onKeyPress={onKeyPress} />
-        <KeyboardKey label="f" onKeyPress={onKeyPress} />
-        <KeyboardKey label="g" onKeyPress={onKeyPress} />
-        <KeyboardKey label="h" onKeyPress={onKeyPress} />
-        <KeyboardKey label="j" onKeyPress={onKeyPress} />
-        <KeyboardKey label="k" onKeyPress={onKeyPress} />
-        <KeyboardKey label="l" onKeyPress={onKeyPress} />
+        {"asdfghjkl".split("").map((keyLabel) => (
+          <KeyboardKey
+            key={keyLabel}
+            label={keyLabel}
+            onKeyPress={onKeyPress}
+            color={keyColors[keyLabel]}
+          />
+        ))}
       </div>
       <div className="keyboard-row">
         <KeyboardKey label="enter" onKeyPress={onKeyPress} />
-        <KeyboardKey label="z" onKeyPress={onKeyPress} />
-        <KeyboardKey label="x" onKeyPress={onKeyPress} />
-        <KeyboardKey label="c" onKeyPress={onKeyPress} />
-        <KeyboardKey label="v" onKeyPress={onKeyPress} />
-        <KeyboardKey label="b" onKeyPress={onKeyPress} />
-        <KeyboardKey label="n" onKeyPress={onKeyPress} />
-        <KeyboardKey label="m" onKeyPress={onKeyPress} />
+        {"zxcvbnm".split("").map((keyLabel) => (
+          <KeyboardKey
+            key={keyLabel}
+            label={keyLabel}
+            onKeyPress={onKeyPress}
+            color={keyColors[keyLabel]}
+          />
+        ))}
         <KeyboardKey
           label={<BackspaceIcon />}
           code="backspace"
@@ -45,6 +48,30 @@ const Keyboard = ({ onKeyPress }) => {
       </div>
     </div>
   );
+};
+
+const calculateKeyColors = (answer, attempts) => {
+  const keyColors = {};
+
+  attempts.forEach((attempt) => {
+    attempt.forEach((letter, i) => {
+      if (letter === answer[i]) {
+        keyColors[letter] = "green";
+      } else if (answer.includes(letter)) {
+        // do not downgrade the color of a key
+        if (keyColors[letter] !== "green") {
+          keyColors[letter] = "yellow";
+        }
+      } else {
+        // do not downgrade the color of a key
+        if (!keyColors[letter]) {
+          keyColors[letter] = "gray";
+        }
+      }
+    });
+  });
+
+  return keyColors;
 };
 
 export default Keyboard;
