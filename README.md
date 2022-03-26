@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Wordle Clone - React Workshop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a clone of the Wordle game, made in React.  
+There is a `design-only` branch that holds the code of the app without any logic, perfect for skipping tedious bootstraping.
 
-## Available Scripts
+## Attending the Workshop
 
-In the project directory, you can run:
+If you're going to attend the workshop on March 29th, please make sure to follow the steps below.
 
-### `yarn start`
+### Setup Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- A Linux/MacOS environment (a Windows environment might also work, but it may cause issues)
+- NodeJS (any recent version will do, I'll be using v16)
+- Yarn (optional)
+- Git (optional)
+- An editor of your choice (I'll be using VSCode)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A tutorial on how to setup all of this can be found on [resumos-leic's wiki](https://github.com/diogotcorreia/resumos-leic/wiki/Development-Environment).
 
-### `yarn test`
+After your environment is setup, you should download the source code of this repository from the `design-only` branch, since this is what we'll be using in the workshop.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you have Git installed, simply type this in the terminal:
 
-### `yarn build`
+```sh
+git clone -b design-only https://github.com/HackerSchool/react-workshop.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Alternatively, [download the zip from GitHub](https://github.com/HackerSchool/react-workshop/archive/refs/heads/design-only.zip).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you are comfortable using the command line, you can go ahead, install dependencies and try out the code you've just downloaded.
+Otherwise, we'll do this in the workshop.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+cd react-workshop # go inside the website folder
+yarn # install dependencies
+yarn start # start development server (by default, on localhost:3000)
+```
 
-### `yarn eject`
+### Knowledge Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Although not strictly necessary, you are expected to know the following when coming to the workshop:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Basic HTML/CSS: how websites are structured, how to style DOM Nodes, CSS classes, etc
+- A programming language (preferably JavaScript, but any programming language will do)
+  - A great resource for learning more about JavaScript is [javascript.info](https://javascript.info/)
+  - We'll be using [arrow functions](https://javascript.info/arrow-functions-basics), [`const` and `let`](https://javascript.info/variables),
+    [logical operators (`&&` and `||`)](https://javascript.info/logical-operators),
+    [objects (just a little bit)](https://javascript.info/object-basics),
+    [arrays](https://javascript.info/array),
+    [various array methods (`.slice`, `.map`, `.reduce`)](https://javascript.info/array-methods),
+    [spread operator](https://javascript.info/rest-parameters-spread)
+    and [DOM events](https://javascript.info/introduction-browser-events) (more specifically, the [`keydown` event](https://javascript.info/keyboard-events)).
+    Don't worry if you don't know all of this! It'll be explained in the workshop.
+- Very basic shell knowledge (change your current directory, run commands, etc). If you have never used a shell before, we'll help you out during the workshop.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Resources
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Below are various resources if you want to learn more about React.
+Other resources about the internet, HTML/CSS and Git are also listed.
 
-## Learn More
+- [React Developer Roadmap](https://roadmap.sh/react)
+- [React Documentation (Getting Started)](https://reactjs.org/docs/getting-started.html)
+- [freeCodeCamp React course](https://www.freecodecamp.org/learn/front-end-development-libraries/#react)
+- [useHooks](https://usehooks.com/) (various pre-made React hooks)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Useful React Libraries/Frameworks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [reach-router](https://github.com/reach/router) (Routing)
+- [react-helmet](https://github.com/nfl/react-helmet) (Document Head Manager)
+- [Next.js](https://nextjs.org/) (Server Side Rendering/Static Site Generator)
+- [Gatsby](https://www.gatsbyjs.com/) (Static Site Generator)
+- [Axios](https://github.com/axios/axios) (HTTP REST client)
+- [Apollo](https://www.apollographql.com/docs/react/get-started/) (GraphQL client)
+- [Material UI](https://mui.com/) (Design Library)
+- [Styled Components](https://styled-components.com/) (CSS in JS)
 
-### Code Splitting
+### Internet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ["How the Internet Works" playlist by Code.org](https://www.youtube.com/playlist?list=PLzdnOPI1iJNfMRZm5DDxco3UdsFegvuB7)
+- ["What is DNS?" by Cloudflare](https://www.cloudflare.com/learning/dns/what-is-dns/)
 
-### Analyzing the Bundle Size
+### HTML/CSS/JS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ["Responsive Web Design" course on freeCodeCamp](https://www.freecodecamp.org/learn/responsive-web-design/)
+- ["A Complete Guide to Flexbox" on CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- ["A Complete Guide to Grid" on CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- ["CSS Diner" - Learn CSS Selectors](https://flukeout.github.io/)
+- ["The Modern JavaScript Tutorial"](https://javascript.info/)
 
-### Making a Progressive Web App
+### Version Control Systems (VCS)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ["Version Control (Git)" by MIT Missing Semester](https://missing.csail.mit.edu/2020/version-control/) (the [whole Missing Semester series](https://missing.csail.mit.edu/) is also great)
 
-### Advanced Configuration
+## Where next?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+After attending the workshop, you have a lot of things you could do.
+I'm gonna go ahead and recommend you to create another game on your own.
 
-### Deployment
+Here are some ideas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe)
+  - The [official React tutorial](https://reactjs.org/tutorial/tutorial.html) uses this as an example and is an excellent learning challenge.
+    Keep in mind that it uses class components instead of the subjetively better functional components.
+- [Four in a row](https://en.wikipedia.org/wiki/Connect_Four)
+- [Mastermind](<https://en.wikipedia.org/wiki/Mastermind_(board_game)>)
+- [Battleship](<https://en.wikipedia.org/wiki/Battleship_(game)>)
+  - I've [made this a while ago](https://github.com/diogotcorreia/battleship-js) (but it has online multiplayer so it's a bit more advanced)
+- ...and much more
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Alternatively, feel free to build anything you want. After all, you get to decide!
