@@ -1,8 +1,11 @@
 import React from "react";
 
-const KeyboardKey = ({ label, onKeyPress }) => {
+const KeyboardKey = ({ label, onKeyPress, color = "unset" }) => {
   return (
-    <button className="keyboard-key" onClick={onKeyPress}>
+    <button
+      className={`keyboard-key keyboard-key--color-${color}`}
+      onClick={onKeyPress}
+    >
       {label}
     </button>
   );

@@ -1,13 +1,14 @@
 import React from "react";
+import BackspaceIcon from "../Icons/BackspaceIcon";
 import KeyboardKey from "./KeyboardKey";
 
 const Keyboard = () => {
   return (
     <div className="keyboard">
       <div className="keyboard-row">
-        <KeyboardKey label="q" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="w" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="e" /* TODO onKeyPress={...} */ />
+        <KeyboardKey label="q" /* TODO onKeyPress={...} */ color="gray" />
+        <KeyboardKey label="w" /* TODO onKeyPress={...} */ color="yellow" />
+        <KeyboardKey label="e" /* TODO onKeyPress={...} */ color="green" />
         <KeyboardKey label="r" /* TODO onKeyPress={...} */ />
         <KeyboardKey label="t" /* TODO onKeyPress={...} */ />
         <KeyboardKey label="y" /* TODO onKeyPress={...} */ />
@@ -36,7 +37,7 @@ const Keyboard = () => {
         <KeyboardKey label="b" /* TODO onKeyPress={...} */ />
         <KeyboardKey label="n" /* TODO onKeyPress={...} */ />
         <KeyboardKey label="m" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="backspace" /* TODO onKeyPress={...} */ />
+        <KeyboardKey label={<BackspaceIcon />} /* TODO onKeyPress={...} */ />
       </div>
     </div>
   );

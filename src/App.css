@@ -11,6 +11,7 @@
   font-size: calc(10px + 2vmin);
   padding: 10px;
   margin-bottom: 5rem;
+  font-weight: bold;
 }
 
 .App-header p {
@@ -47,11 +48,13 @@
   justify-content: center;
   align-items: center;
   border: 2px solid #3a3a3c;
-  width: 3em;
-  height: 3em;
-  margin: 0.3rem;
+  width: 2em;
+  height: 2em;
+  margin: 0.2rem;
   text-transform: uppercase;
   box-sizing: border-box;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .square--color-gray {
@@ -74,6 +77,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .keyboard-row {
@@ -87,11 +91,28 @@
   border-radius: 4px;
   box-shadow: none;
   border: 0;
-  height: 3em;
-  min-width: 2.5em;
-  margin: 0.6rem 0.3rem;
+  height: 2.2em;
+  min-width: 2.1em;
+  margin: 0.3rem;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
+  transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.keyboard-key:hover {
+  opacity: 0.8;
+}
+
+.keyboard-key.keyboard-key--color-gray {
+  background: #3a3a3c;
+}
+
+.keyboard-key.keyboard-key--color-green {
+  background: #6aaa64;
+}
+
+.keyboard-key.keyboard-key--color-yellow {
+  background: #c9b458;
 }
