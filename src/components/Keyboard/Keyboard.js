@@ -2,42 +2,46 @@ import React from "react";
 import BackspaceIcon from "../Icons/BackspaceIcon";
 import KeyboardKey from "./KeyboardKey";
 
-const Keyboard = () => {
+const Keyboard = ({ onKeyPress }) => {
   return (
     <div className="keyboard">
       <div className="keyboard-row">
-        <KeyboardKey label="q" /* TODO onKeyPress={...} */ color="gray" />
-        <KeyboardKey label="w" /* TODO onKeyPress={...} */ color="yellow" />
-        <KeyboardKey label="e" /* TODO onKeyPress={...} */ color="green" />
-        <KeyboardKey label="r" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="t" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="y" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="u" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="i" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="o" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="p" /* TODO onKeyPress={...} */ />
+        <KeyboardKey label="q" onKeyPress={onKeyPress} />
+        <KeyboardKey label="w" onKeyPress={onKeyPress} />
+        <KeyboardKey label="e" onKeyPress={onKeyPress} />
+        <KeyboardKey label="r" onKeyPress={onKeyPress} />
+        <KeyboardKey label="t" onKeyPress={onKeyPress} />
+        <KeyboardKey label="y" onKeyPress={onKeyPress} />
+        <KeyboardKey label="u" onKeyPress={onKeyPress} />
+        <KeyboardKey label="i" onKeyPress={onKeyPress} />
+        <KeyboardKey label="o" onKeyPress={onKeyPress} />
+        <KeyboardKey label="p" onKeyPress={onKeyPress} />
       </div>
       <div className="keyboard-row">
-        <KeyboardKey label="a" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="s" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="d" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="f" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="g" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="h" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="j" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="k" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="l" /* TODO onKeyPress={...} */ />
+        <KeyboardKey label="a" onKeyPress={onKeyPress} />
+        <KeyboardKey label="s" onKeyPress={onKeyPress} />
+        <KeyboardKey label="d" onKeyPress={onKeyPress} />
+        <KeyboardKey label="f" onKeyPress={onKeyPress} />
+        <KeyboardKey label="g" onKeyPress={onKeyPress} />
+        <KeyboardKey label="h" onKeyPress={onKeyPress} />
+        <KeyboardKey label="j" onKeyPress={onKeyPress} />
+        <KeyboardKey label="k" onKeyPress={onKeyPress} />
+        <KeyboardKey label="l" onKeyPress={onKeyPress} />
       </div>
       <div className="keyboard-row">
-        <KeyboardKey label="enter" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="z" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="x" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="c" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="v" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="b" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="n" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label="m" /* TODO onKeyPress={...} */ />
-        <KeyboardKey label={<BackspaceIcon />} /* TODO onKeyPress={...} */ />
+        <KeyboardKey label="enter" onKeyPress={onKeyPress} />
+        <KeyboardKey label="z" onKeyPress={onKeyPress} />
+        <KeyboardKey label="x" onKeyPress={onKeyPress} />
+        <KeyboardKey label="c" onKeyPress={onKeyPress} />
+        <KeyboardKey label="v" onKeyPress={onKeyPress} />
+        <KeyboardKey label="b" onKeyPress={onKeyPress} />
+        <KeyboardKey label="n" onKeyPress={onKeyPress} />
+        <KeyboardKey label="m" onKeyPress={onKeyPress} />
+        <KeyboardKey
+          label={<BackspaceIcon />}
+          code="backspace"
+          onKeyPress={onKeyPress}
+        />
       </div>
     </div>
   );

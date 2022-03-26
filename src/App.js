@@ -1,6 +1,6 @@
+import React from "react";
 import "./App.css";
-import GameSquares from "./components/Game/GameSquares";
-import Keyboard from "./components/Keyboard/Keyboard";
+import GameManager from "./components/Game/GameManager";
 
 function App() {
   return (
@@ -9,8 +9,7 @@ function App() {
         <p>Wordle (kinda)</p>
       </header>
       <main className="App-body">
-        <GameSquares />
-        <Keyboard />
+        <GameManager />
       </main>
     </div>
   );

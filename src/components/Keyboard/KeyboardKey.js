@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useCallback } from "react";
 
-const KeyboardKey = ({ label, onKeyPress, color = "unset" }) => {
+const KeyboardKey = ({ label, code, onKeyPress, color = "unset" }) => {
+  const keyCode = code || label;
+  const handleClick = useCallback(
+    () => onKeyPress(keyCode),
+    [onKeyPress, keyCode]
+  );
+
   return (
     <button
       className={`keyboard-key keyboard-key--color-${color}`}
-      onClick={onKeyPress}
+      onClick={handleClick}
     >
       {label}
     </button>
