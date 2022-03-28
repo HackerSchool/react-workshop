@@ -64,11 +64,11 @@ const GameManager = () => {
 
   return (
     <>
-      <div class="message-area">
-        {won && <p class="game-result">You win!</p>}
+      <div className="message-area">
+        {won && <p className="game-result">You win!</p>}
         {attempt >= ATTEMPT_COUNT && !won && (
           <>
-            <p class="game-result">You lost :/</p>
+            <p className="game-result">You lost :/</p>
             <p>
               The correct word was <strong>{answer}</strong>.
             </p>
