@@ -55,10 +55,10 @@ const GameManager = () => {
       }
     };
 
-    window.addEventListener("keydown", keyPressListener);
+    document.addEventListener("keydown", keyPressListener);
 
     return () => {
-      window.removeEventListener("keydown", keyPressListener);
+      document.removeEventListener("keydown", keyPressListener);
     };
   }, [handleKeyButtonClick]);
 
