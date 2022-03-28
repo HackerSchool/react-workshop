@@ -44,11 +44,12 @@ const GameManager = () => {
     const keyPressListener = (event) => {
       const keyCode = event.key.toLowerCase();
       if (
-        keyCode === "enter" ||
-        keyCode === "backspace" ||
-        (keyCode.length === 1 &&
-          keyCode.charCodeAt(0) >= 97 &&
-          keyCode.charCodeAt(0) <= 122)
+        !(event.ctrlKey || event.shiftKey || event.metaKey) &&
+        (keyCode === "enter" ||
+          keyCode === "backspace" ||
+          (keyCode.length === 1 &&
+            keyCode.charCodeAt(0) >= 97 &&
+            keyCode.charCodeAt(0) <= 122))
       ) {
         handleKeyButtonClick(keyCode);
       }
