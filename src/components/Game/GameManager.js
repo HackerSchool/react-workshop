@@ -44,30 +44,31 @@ const GameManager = () => {
     const keyPressListener = (event) => {
       const keyCode = event.key.toLowerCase();
       if (
-        keyCode === "enter" ||
-        keyCode === "backspace" ||
-        (keyCode.length === 1 &&
-          keyCode.charCodeAt(0) >= 97 &&
-          keyCode.charCodeAt(0) <= 122)
+        !(event.ctrlKey || event.shiftKey || event.metaKey) &&
+        (keyCode === "enter" ||
+          keyCode === "backspace" ||
+          (keyCode.length === 1 &&
+            keyCode.charCodeAt(0) >= 97 &&
+            keyCode.charCodeAt(0) <= 122))
       ) {
         handleKeyButtonClick(keyCode);
       }
     };
 
-    window.addEventListener("keydown", keyPressListener);
+    document.addEventListener("keydown", keyPressListener);
 
     return () => {
-      window.removeEventListener("keydown", keyPressListener);
+      document.removeEventListener("keydown", keyPressListener);
     };
   }, [handleKeyButtonClick]);
 
   return (
     <>
-      <div class="message-area">
-        {won && <p class="game-result">You win!</p>}
+      <div className="message-area">
+        {won && <p className="game-result">You win!</p>}
         {attempt >= ATTEMPT_COUNT && !won && (
           <>
-            <p class="game-result">You lost :/</p>
+            <p className="game-result">You lost :/</p>
             <p>
               The correct word was <strong>{answer}</strong>.
             </p>
